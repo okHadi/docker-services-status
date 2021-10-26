@@ -6,7 +6,9 @@ It is a dockerised application.
 ## Using
 
 I have tested this on ubuntu. You must change the code according to your own needs. Look out for "editable code" comments in the application code.
+
 You must have the required libraries installed (docker and related).
-You must add your key in order to access the server. Check 
 
+You must add your key in order to access the server. Check views.py.
 
+Feel free to make the changes according to your own requirements.
