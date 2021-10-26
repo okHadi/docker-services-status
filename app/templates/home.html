@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en-us">             <!--Editable data-->
+  <head>
+    
+    <link href="services.txt">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CryptoKit services</title>
+    
+  </head>
+
+  <body style="background: linear-gradient(79.93deg, #020074 0.05%, #7c0070 100%)">
+      
+    <h1 style="color: rgb(255, 255, 255); font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">CryptoKit services</h1>
+    <h4 style="color: rgb(255, 255, 255); font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;">This webpage shows all the services of CryptoKit currently running.</h4>
+    <div class="container">
+        <table style="border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: linear-gradient(79.93deg, #020074 0.05%, #7c0070 100%);
+        width: 100%;">
+            <thead style="background: linear-gradient(79.93deg, #020074 0.05%, #7c0070 100%)">
+                <tr style="color: rgb(255, 255, 255);padding: 12px 15px; font-size: 20px; font-family: 'Helvetica Neue', sans-serif; font-weight: bold;
+                color: #ffffff;
+                text-align: left;">>
+                    <th style="padding: 12px 15px">Image</th>
+                    <th style="padding: 12px 15px">Ports</th>
+                    <th style="padding: 12px 15px">Created</th>
+                    <th style="padding: 12px 15px">Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody id='data'>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script type='text/javascript'>
+        fetch("test2.json")
+        .then(res => res.json())
+        .then(data =>{
+            const obj = []
+            for(var key in data) {
+            obj.push(data[key]);
+            }
+            console.log(obj)
+            if(obj.length > 0){
+                let temp = ''
+
+                obj.forEach((u) =>{
+                    temp +='<tr style=background: linear-gradient(79.93deg, #020074 0.05%, #7c0070 100%)">'
+                    temp +='<td style="color: rgb(255, 255, 255);padding: 12px 15px">'+u.Names+"</td>"
+                    temp +='<td style="color: rgb(255, 255, 255);padding: 12px 15px">'+u.Ports+"</td>"
+                    temp +='<td style="color: rgb(255, 255, 255);padding: 12px 15px">'+u.Created+"</td>"
+                    temp +='<td style="color: rgb(255, 255, 255);padding: 12px 15px">'+u.Status+"</td></tr>"
+                })
+                document.getElementById("data").innerHTML = temp
+            }
+        })
+    </script>
+    <div>
+    </div>
+
+  </body>
+</html>

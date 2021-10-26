@@ -1,0 +1,1 @@
+ssh -i app/web-beta.pem root@ckweb-beta.ddns.net sudo docker ps
